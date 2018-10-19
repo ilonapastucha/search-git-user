@@ -16,7 +16,11 @@
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all build:sass -p build:autoprefixer",
     "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
-    "start": "babel script.js --watch --out-file build.js"
+    "start": "npm-run-all start:*",
+    "start:script": "babel script.js --out-file build.js",
+    "start:app":"babel app.js --out-file build-app.js",
+    "start:user":"babel app.js --out-file build-user.js",
+    "start:userList":"babel app.js --out-file build-userList.js"
   },
   "keywords": [],
   "author": "",
